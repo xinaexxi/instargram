@@ -1,3 +1,17 @@
+* {
+  margin: 0; padding: 0;
+  list-style: none;
+  text-decoration: none;
+  /* color: #333; */
+}
+a {
+  color: #333;
+}
+button{
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
 .App {
   text-align: center;
 }
@@ -6,33 +20,498 @@
   height: 40vmin;
   pointer-events: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.center {
+  width: 1200px;
+  margin: 0 auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Login */
+.loginContainer {
+  width: 400px;
+  height: 440px;
+  margin: 150px auto;
+}
+.loginContainer .login {
+  border: 1px solid #ddd;
+  background: #fff;
+  padding-bottom: 10px;
+}
+.loginContainer .logo {
+  width: 220px;
+  margin: 20px auto 0 auto;
+}
+.loginContainer .logo img{
+  width: 220px;
+}
+.loginContainer .inputBox {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  padding: 30px;
+  box-sizing: border-box;
+}
+.loginContainer .inputBox input {
+  margin-top: 20px;
+  height: 40px;
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  box-shadow:  inset 0px 3px 3px #eee;
+  text-indent: 10px;
+}
+.loginContainer .inputBox input:focus {
+  outline: none;
+}
+.loginContainer .inputBox input::placeholder {
+  color: #999;
+}
+.loginContainer .inputBox button {
+  margin-top: 20px;
+  height: 40px;
+  background-color: #0095f6;
+  border: none;
+  box-shadow:  0px 3px 3px #eee;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+.loginContainer .lostPw {
+  width: 100%;
+  text-align: center;
+}
+.loginContainer .lostPw p {
+  cursor: pointer;
+  color: #777;
+  font-size: 14px;
+  padding: 10px 20px;
+}
+
+.loginContainer .join {
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  background: #fff;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: #777;
+  font-size: 14px;
+  padding: 20px;
+}
+.loginContainer .join p {
+  margin-right: 10px;
+}
+.loginContainer .join span {
+  color: #0095f6 ;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+
+/* nav */
+.navContainer {
+  width: 100%;
+  display: flex;
+  border-top: 2px solid #ddd;
+  border-bottom: 2px solid #ddd;
+  background: rgb(252, 252, 252);
+  position: fixed;
+  top: 0;
+}
+.navContainer .contents {
+  display: flex;
+  justify-content:space-between;
+  height: 46px;
+}
+.navContainer .logo {
+  display: block;
+}
+.navContainer .logo img {
+  width: 100px;
+  object-fit: cover;
+}
+.navContainer .searchBox {
+  margin-top: 7px;
+}
+.navContainer .searchBox input {
+  width: 250px;
+  height: 28px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: rgb(243, 243, 243);
+}
+.navContainer .rightTop {
+  display: flex;
+  align-items: center;
+  width: 150px;
+  height: 100%;
+}
+.navContainer .rightTop > button {
+  width: 33%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  position: relative;
+}
+.navContainer .rightTop .myFeed {
+  position: absolute;
+  background: #fff;
+  width: 100px;
+  top: 200%;
+  right: 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.navContainer .rightTop .myPage:hover .myFeed{
+  display: block;
+}
+.navContainer .rightTop .myFeed a {
+  display: inline-block;
+  padding: 6px;
+  font-size: 14px;
+  color: #999;
+  cursor: pointer;
+}
+.navContainer .rightTop .myFeed a:hover {
+  color: #666;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+/* Main */
+.mainContainer {
+  width: 100%;
+  height: 100%;
+  background: #f2f2f2;
+  padding-top: 60px;
+}
+.mainContainer .center > div {
+  display: flex;
+  align-items: flex-start;
+}
+
+
+.viewMore {
+  padding: 10px;
+  box-sizing: border-box;
+  background:#ddd;
+  border: 2px solid #b3b3b3;
+  margin: 20px 0; 
+}
+.viewMore button {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #666;
+}
+
+
+/* feed */
+.feedWrap {
+  flex: 1.5;
+}
+.feedContainer {
+  width: 100%;
+  margin: 10px 0;
+  border: 2px solid #ddd;
+  background: #fefefe;
+  padding-bottom: 5px;
+}
+.feedContainer .itemHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.feedContainer .itemHeader .profile {
+  display: flex;
+  align-items: center;
+}
+
+.feedContainer .itemHeader .profile p {
+  padding-left: 10px;
+  font-size: 16px;
+}
+.feedContainer .profile .profileImg {
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  border-radius: 50%;
+} 
+.feedContainer .profile .profileImg img {
+  width: 100%;
+}
+
+.feedContainer .itemImg {
+  width: 100%;
+}
+.feedContainer .itemImg img {
+  width: 100%;
+}
+
+/* switch */
+.feedContainer .switch {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+.feedContainer .switch button{
+  display: inline-block;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+
+/* content */
+.itemContent {
+  padding-left: 20px;
+}
+.itemContent .contentBox {
+  display: flex;
+}
+.itemContent .contentBox p {
+  padding-left: 8px;
+  font-size: 16px;
+}
+.itemContent .likeBox {
+  font-size: 14px;
+  font-weight: bold;
+}
+.postDate {
+  font-size: 12px;
+  color: #aaa;
+  padding-left: 20px;
+}
+
+
+/* comment */
+.feedContainer .commentBox {
+  margin-left: 10px;
+  font-size: 12px;
+  color: #666;
+}
+.feedContainer .commentBox .commentItem {
+  display: flex;
+}
+.feedContainer .commentBox .commentItem strong {
+  color: #333;
+  margin-right: 10px;
+  flex: 1;
+}
+.feedContainer .commentBox .commentItem p {
+  flex: 8;
+}
+.feedContainer .commentBox .commentItem button {
+  flex: 1;
+}
+.feedContainer .addComment {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  border-top: 1px solid #eee;
+}
+.feedContainer .addComment input {
+  width: 90%;
+  height: 20px;
+  border: none;
+  text-indent: 10px;
+}
+
+
+
+
+
+/* userMenu */
+.userWrap {
+  flex: 1;
+  width: 100%;
+  margin-left: 50px;
+  margin-top: 10px;
+}
+
+.userBox {
+  padding: 0 20px;
+}
+.userWrap .profile {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  cursor: pointer;
+}
+.userWrap .profile .profileImg {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+} 
+.userWrap .profile .profileImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.userWrap .profile .profileText {
+  display: flex;
+  flex-direction :column;
+  margin-left: 10px;
+}
+.userWrap .profile .profileText p {
+  font-size: 12px;
+  color: #666;
+}
+
+
+.recommendBox {
+  border: 2px solid #ddd;
+  background: #fefefe;
+  margin: 20px 0;
+  padding: 10px;
+}
+.recommendBox .recomHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.recommendBox .recomHeader h4 {
+  font-size: 14px;
+  color: #666;
+}
+.recommendBox .recomHeader strong {
+  font-size: 12px;
+}
+.recommendBox .recommendUser {
+  padding: 0 10px;
+}
+.recommendBox .recommendUser .recommendProfile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.recommendBox .recommendProfile button {
+  font-weight: bold;
+  color: #0095f6 ;
+}
+
+
+
+
+
+
+
+/* MyPage */
+
+.myContainer {
+  margin-top: 60px;
+}
+.myContainer .profile {
+  width: 100%;
+  padding: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
+}
+.myContainer .profile .profileImg {
+  width: 200px;
+  height:200px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.myContainer .profile .profileInfo {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 50px;
+}
+.myContainer .profile .profileInfo .myID {
+  display: flex;
+  justify-content: flex-start;
+}
+.myContainer .profile .profileInfo .myID h3 {
+  font-size: 24px;
+  font-weight: normal;
+  margin-right: 50px;
+}
+.myContainer .profile .profileInfo .myID button {
+  padding: 5px 20px;
+  border: none;
+  background: #d9d9d9;
+  font-size: 18px;
+  border-radius: 2px;
+  margin-top: -5px;
+}
+.myContainer .profile .profileInfo .follower ul {
+  display: flex;
+  margin-top: 40px;
+}
+.myContainer .profile .profileInfo .follower ul li {
+  padding-right: 50px;
+}
+.myContainer .profile .profileInfo .greeting {
+  margin-top: 40px;
+}
+
+.center nav {
+  width: 100%;
+}
+.center nav #tabMenu {
+  width: 50%;
+  margin: 5px auto;
+  display: flex;
+  justify-content: space-between;
+
+}
+.center nav #tabMenu li {
+  padding: 5px 20px;
+  font-size: 14px;
+  color: #aaa;
+  cursor: pointer;
+}
+.center nav #tabMenu li.on {
+  font-weight: bold;
+  color: #555;
+  font-size: 16px;
+  position: relative;
+}
+.center nav #tabMenu li.on::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #555;
+  top: -5px;
+  left: 0;
+}
+
+.contentsContainer .feedContainer {
+  width: 80%;
+  margin: 10px auto;
+}
+
+
+.contentsContainer .myPostWrap ul li {
+  width: 30%;
+  padding: 1%;
+  float: left;
+}
+.contentsContainer .myPostWrap ul li img {
+  width: 100%;height: 100%;object-fit: cover;
+}
+
+
+
+
+@media (max-width: 1200px){
+  .center {
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 900px){
+  .mainContainer {
+    margin-top: 40px;
   }
+ .userWrap {
+  display: none;
+ }
 }
