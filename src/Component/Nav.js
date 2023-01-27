@@ -41,6 +41,27 @@ function Nav({setLogin}) {
             </button>
           </div>
         </div>
+
+        <div className="navBottom">
+            <button><FontAwesomeIcon icon={faHeart} size="2x"  color='#555' cursor="pointer" /></button>
+            <button><FontAwesomeIcon icon={faSquarePlus} size="2x" color='#555' cursor="pointer"/></button>
+            <button><FontAwesomeIcon icon={faPaperPlane} size="2x"  color='#555' cursor="pointer" /></button>
+            <button onClick={()=>{
+              myPage == false ? setMyPage(true) : setMyPage(false) ;
+            }}><FontAwesomeIcon icon={faUser} size="2x"  color='#555' cursor="pointer" />
+            {
+              myPage == false
+              ? null
+              : <ul id='myFeed' className='myFeed'>
+                  <li><Link to="/myPage" >my feed</Link>
+                  </li>
+                  <li><a onClick={()=>{
+                    setLogin(false);
+                  }}>logout</a></li>
+                </ul>
+            }
+            </button>
+        </div>
       </div>
     </div>
   );

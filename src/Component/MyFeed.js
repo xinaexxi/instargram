@@ -10,8 +10,9 @@ function MyFeed({myData}) {
 
   let feedList = feedItem.map((item, i) => { return (<FeedItem key={i} id={i + 1} feedItem={myPost[i]}></FeedItem>) })
 
-
-
+  window.addEventListener('scroll',(event)=>{
+    console.log(window.scrollY)
+  })
   return (
     <>
       <div className='myFeedWrap'>

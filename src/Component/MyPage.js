@@ -8,8 +8,8 @@ import $ from "jquery";
 function MyPage() {
 
   let [tab, setTab] = useState(0);
-
-
+  let [postSwitch, setPostSwitch] = useState(true);
+  
   return (
     <>
       <div className='center'>
@@ -17,7 +17,7 @@ function MyPage() {
 
           <div className='profile'>
             <div className='profileImg'>
-              <img src="https://placeimg.com/200/200/people" alt="프로필 이미지" />
+              <img src={myData[0].userImage} alt="프로필 이미지" />
             </div>
             <div className='profileInfo'>
               <div className='myID'>
@@ -41,22 +41,35 @@ function MyPage() {
 
         <nav>
           <ul id='tabMenu'>
-            <li onClick={(e) => {
+            <li className="on" onClick={(e) => {
               setTab(0);
+              setPostSwitch(true);
+              let tabList = document.querySelectorAll('#tabMenu li');
+              for(let i = 0 ; i < tabList.length ; i++) {
+                tabList[i].classList.remove('on');
+              }
               e.target.classList.add('on');
             }}>게시물</li>
             <li onClick={(e) => {
               setTab(1);
+              let tabList = document.querySelectorAll('#tabMenu li');
+              for(let i = 0 ; i < tabList.length ; i++) {
+                tabList[i].classList.remove('on');
+              }
               e.target.classList.add('on');
             }}>피드</li>
             <li onClick={(e) => {
               setTab(2);
+              let tabList = document.querySelectorAll('#tabMenu li');
+              for(let i = 0 ; i < tabList.length ; i++) {
+                tabList[i].classList.remove('on');
+              }
               e.target.classList.add('on');
             }}>저장됨</li>
           </ul>
         </nav>
 
-        <MyContent tab={tab} myData={myData}></MyContent>
+        <MyContent tab={tab} myData={myData} setPostSwitch={setPostSwitch} postSwitch={postSwitch} ></MyContent>
       </div>
 
 

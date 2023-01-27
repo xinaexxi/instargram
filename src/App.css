@@ -114,6 +114,10 @@ button{
   background: rgb(252, 252, 252);
   position: fixed;
   top: 0;
+  z-index: 100;
+}
+.navContainer .navBottom {
+  display: none;
 }
 .navContainer .contents {
   display: flex;
@@ -151,7 +155,7 @@ button{
   font-size: 16px;
   position: relative;
 }
-.navContainer .rightTop .myFeed {
+.navContainer .myFeed {
   position: absolute;
   background: #fff;
   width: 100px;
@@ -160,17 +164,17 @@ button{
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-.navContainer .rightTop .myPage:hover .myFeed{
+.navContainer .myPage:hover .myFeed{
   display: block;
 }
-.navContainer .rightTop .myFeed a {
+.navContainer .myFeed a {
   display: inline-block;
   padding: 6px;
   font-size: 14px;
   color: #999;
   cursor: pointer;
 }
-.navContainer .rightTop .myFeed a:hover {
+.navContainer .myFeed a:hover {
   color: #666;
   font-weight: bold;
 }
@@ -417,6 +421,11 @@ button{
   overflow: hidden;
   border-radius: 50%;
 }
+.myContainer .profile .profileImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .myContainer .profile .profileInfo {
   width: 500px;
   display: flex;
@@ -491,8 +500,10 @@ button{
 
 .contentsContainer .myPostWrap ul li {
   width: 30%;
+  height: 350px;
   padding: 1%;
   float: left;
+  overflow: hidden;
 }
 .contentsContainer .myPostWrap ul li img {
   width: 100%;height: 100%;object-fit: cover;
@@ -505,13 +516,116 @@ button{
   .center {
     width: 100%;
   }
+  .feedContainer {
+    margin: 0;
+    border-bottom: none;
+    width: 100% !important;
+  }
 }
 
 @media (max-width: 900px){
-  .mainContainer {
-    margin-top: 40px;
-  }
- .userWrap {
+.mainContainer {
+  margin-top: 0;
+  padding-top: 45px;
+}
+.navContainer .rightTop {
   display: none;
- }
+}
+.navContainer .searchBox {
+  display: none;
+}
+.navContainer .navBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 60px;
+  background: #fff;
+  bottom: 0;
+  border-top:1px solid #f2f2f2 ;
+}
+.navContainer .navBottom  button {
+  width: 20%;
+}
+.navContainer .myFeed {
+  width: 120px;
+  top: -200%;
+  right: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.navContainer .myFeed a {
+  padding: 18px;
+}
+.userWrap {
+display: none;
+}
+.myContainer .profile {
+  justify-content: space-between;
+}
+ .myContainer .profile .profileInfo {
+  margin-right: 0;
+  width: 60%;
+}
+.contentsContainer .myPostWrap ul li {
+  width: 33.3%;
+  padding: 1px;
+  box-sizing: border-box;
+}
+}
+
+@media (max-width: 650px){
+ .myContainer .profile {
+  padding: 20px 10px;
+  justify-content: space-around;
+}
+ .myContainer .profile .profileImg {
+  width: 120px;
+  height: 120px;
+}
+.myContainer .profile .profileInfo .myID h3 {
+  font-size: 20px;
+}
+.myContainer .profile .profileInfo .myID button {
+  font-size: 16px;
+  padding: 5px 12px;
+}
+.myContainer .profile .profileInfo .follower ul {
+  margin-top: 10px;
+}
+.myContainer .profile .profileInfo .follower ul li {
+  padding-right: 20px;
+}
+.myContainer .profile .profileInfo .greeting {
+ margin-top: 10px;
+}
+.center nav #tabMenu {
+  width: 80%;
+}
+}
+@media (max-width: 450px){
+ .myContainer .profile .profileImg {
+  width: 100px;
+  height: 100px;
+}
+.myContainer .profile .profileInfo .myID h3 {
+  font-size: 18px;
+  margin-right: 20px;
+}
+.myContainer .profile .profileInfo .myID button {
+  font-size: 14px;
+  padding: 5px 8px;
+}
+.myContainer .profile .profileInfo .follower ul {
+  margin-top: 10px;
+}
+.myContainer .profile .profileInfo .follower ul li {
+  font-size: 14px;
+}
+.myContainer .profile .profileInfo .greeting {
+ margin-top: 10px;
+}
+
 }
