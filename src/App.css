@@ -217,7 +217,6 @@ button{
   margin: 10px 0;
   border: 2px solid #ddd;
   background: #fefefe;
-  padding-bottom: 5px;
 }
 .feedContainer .itemHeader {
   display: flex;
