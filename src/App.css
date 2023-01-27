@@ -313,6 +313,7 @@ button{
   margin-top: 10px;
   box-sizing: border-box;
   border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
 }
 .feedContainer .addComment input {
   width: 90%;
@@ -524,6 +525,9 @@ button{
 }
 
 @media (max-width: 900px){
+.feedWrap {
+    padding-bottom: 60px;
+}
 .mainContainer {
   margin-top: 0;
   padding-top: 45px;
@@ -565,9 +569,15 @@ display: none;
 .myContainer .profile {
   justify-content: space-between;
 }
- .myContainer .profile .profileInfo {
+.myContainer .profile .profileInfo {
   margin-right: 0;
   width: 60%;
+}
+.feedContainer {
+  border: none;
+}
+.contentsContainer .myPostWrap {
+  padding-bottom:60px;
 }
 .contentsContainer .myPostWrap ul li {
   width: 33.3%;
@@ -626,6 +636,12 @@ display: none;
 }
 .myContainer .profile .profileInfo .greeting {
  margin-top: 10px;
+}
+.feedContainer .contentBox strong {
+  font-size: 14px;
+}
+.feedContainer .contentBox p {
+  font-size: 14px;
 }
 
 }
